@@ -1,0 +1,293 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit';
+}
+
+body {
+  background: linear-gradient(to left, rgba(4, 217, 217, 0.5), rgb(118, 191, 84, 0.5));
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 70px;
+}
+
+.custom-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(1.8px);    
+  -webkit-backdrop-filter: blur(5px); 
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.custom-modal-box {
+  background: white;
+  padding: 0px 30px;
+  border-radius: 8px;
+  text-align: center;
+  padding-top: 0;
+  margin-top: 0;
+  max-height: 70vh;     
+  overflow-y: auto; 
+  padding-right: 10px;    
+  box-sizing: border-box;  
+  scrollbar-gutter: stable;  
+  padding-inline-end: 12px;
+}
+
+#confirmMessage {
+  margin-bottom: 20px;
+  font-size: 18px;
+  margin-right: 15px;
+  background-color: white;
+  padding-top: 20px;
+}
+
+#confirmModal .custom-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.btn-yes {
+  padding: 8px 30px;
+  background-color: rgba(118, 191, 84, 0.55);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn-yes:hover  {
+  background-color: #76BF54;
+}
+
+.btn-no {
+  padding: 8px 20px;
+  background-color: rgba(242, 126, 169, 0.55);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn-no:hover {
+  background-color: #F27EA9;
+}
+
+/* -------------------------
+   Topbar / Header
+------------------------- */
+.containerHero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 1000;
+  border-bottom: 1px solid #454545;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  column-gap: 15px;
+  margin-right: 20px; 
+}
+
+.logoWrapper {
+  width: 45px;
+  height: 45px;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoPicture {
+  width: auto;
+  height: 30px;
+}
+
+.textLogo {
+  font-weight: 700;
+  font-size: 23px;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  margin-left: -13px;
+}
+
+.logoutButton {
+  margin-left: auto; 
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+.logoutIcon {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+/* Container */
+.container {
+  display: flex;
+  width: 870px;
+  height: 440px;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid #454545;
+  box-shadow: 0 0px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Right Panel (as pink panel) */
+.right-panel {
+  width: 50%;
+  background-color: #89D770;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-top-left-radius: 190px;
+  border-bottom-left-radius: 190px;
+  box-shadow: 0 0px 12px rgba(0, 0, 0, 0.1);
+}
+
+.right-panel h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.right-panel p {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: #89D770;
+  font-weight: 700;
+}
+
+/* Left Panel (form input) */
+.left-panel {
+  width: 60%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+}
+
+.left-panel h2 {
+  margin-bottom: 25px;
+  text-align: center;
+  color: #333;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.input-group input {
+  border: 1px solid rgba(4, 217, 217, 0.5);
+  padding: 12px;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.1s;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.input-group input:focus {
+  border: 2px solid rgb(4, 217, 217);
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+}
+
+.toggle-password img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  margin-right: 2px;
+  margin-top: 3px;
+  transition: opacity 0.2s ease;
+}
+
+.toggle-password img:hover {
+  opacity: 1;
+}
+
+.btn-primary {
+  background-color: rgba(4, 217, 217, 0.5);
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 20px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: rgb(4, 217, 217);
+}
+
+#toast-container {
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+}

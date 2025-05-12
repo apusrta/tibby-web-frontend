@@ -1,0 +1,626 @@
+body {
+  font-family: 'Outfit';
+  background-color: #ffffff;
+  margin: 0;
+  padding-top: 70px;
+  margin-right: 40px;
+  background-color: rgba(118, 191, 84, 0.150);
+  padding-bottom: 10px;
+}
+
+/* -------------------------
+   Topbar / Header
+------------------------- */
+.containerHero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 1000;
+  border-bottom: 1px solid #454545;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  column-gap: 15px;
+}
+
+.logoWrapper {
+  width: 45px;
+  height: 45px;
+  border-radius: 30px;
+  /* background-color: #DDFCFC; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
+}
+
+.logoPicture {
+  width: auto;
+  height: 30px;
+}
+
+.textLogo {
+  font-weight: 700;
+  font-size: 23px;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  margin-left: -13px;
+}
+
+.sidebarWrapperBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  margin-left: auto;
+  margin-right: 13px;
+}
+
+.sidebarMainBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+
+.sidebarMainBtn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidebarMainBtn img {
+  width: auto;
+  height: 30px;
+  transition: opacity 0.15s ease;
+  opacity: 1;
+}
+
+.sidebarMainBtn img.fade-out {
+  opacity: 0;
+}
+
+/* -------------------------
+   Sidebar Kanan
+------------------------- */
+
+.sidebar {
+  display: flex; 
+  position: fixed;
+  right: 15px;
+  top: 60px;
+  height: 84%;
+  background-color: white;
+  border-left: 1px solid #454545;
+  padding: 30px 30px 25px 15px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  padding-right: 15px;
+  margin-right: -15px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px; 
+  
+  opacity: 1;
+  transform: translateX(100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar.show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+
+
+/* -------------------------
+   Icon Mini (dalam Sidebar)
+------------------------- */
+.iconMini {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  background-color: rgb(245, 245, 245);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.iconMini:hover {
+  transform: scale(1.1);
+}
+
+.iconMini img {
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.iconMini img.active {
+  opacity: 1;
+}
+
+/* Tooltip di samping ikon */
+.tooltip {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #454545;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.iconMini:hover .tooltip {
+  opacity: 1;
+}
+
+#berandaColor {
+  background-color: rgb(242, 80, 139, 0.5);
+}
+
+#peringkatColor {
+  background-color: rgb(163, 139, 217, 0.5);
+}
+
+#kelasColor {
+  background-color: rgb(4, 217, 217, 0.5);
+}
+
+#profileColor {
+  background-color: #76BF54;
+}
+
+/* Container Utama */
+.profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: rgb(255, 255, 255);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #454545;
+  box-shadow: 0 0px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Baris informasi profil */
+.info-row {
+  display: grid;
+  grid-template-columns: 200px 60px 1fr; 
+  align-items: center;
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+  padding: 6px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.label {
+  font-weight: 600;
+  color: #333;
+}
+
+.colon {
+  text-align: center;
+  color: #555;
+  font-weight: bold;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-pic-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #76BF54;
+  background-color: #e0f7f4;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+}
+
+/* Nama guru */
+.profile-info h2 {
+  margin: 0 0 12px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+}
+
+.profile-info .info-row:first-child {
+  margin-top: 0;
+}
+
+.judulProfile {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  color: #333;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.judulProfile::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #76BF54; 
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.profile-info p {
+  margin: 4px 0;
+  font-size: 15px;
+  color: #555;
+}
+
+/* Kontainer tombol */
+.buttons2 {
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* Tombol Edit Profil */
+#editProfileBtn {
+  padding: 10px 24px;
+  background-color: rgb(118, 191, 84, 0.7);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(118, 191, 84, 0.2);
+}
+
+#editProfileBtn:hover {
+  background-color: #76BF54;
+  transform: scale(1.05);
+}
+
+/* Tombol Logout */
+.logout {
+  padding: 10px 24px;
+  background-color: rgb(244, 67, 54, 0.7);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(244, 67, 54, 0.2);
+}
+
+.logout:hover {
+  background-color: #f44336;
+  transform: scale(1.05);
+}
+
+/* confirm */
+
+.custom-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* lebih transparan agar blur kelihatan */
+  backdrop-filter: blur(1.8px);     /* efek blur */
+  -webkit-backdrop-filter: blur(5px); /* untuk Safari */
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.custom-modal-box1 {
+  background: white;
+  width: 90%;
+  max-width: 470px;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  max-height: 75vh;
+  overflow-y: auto;         
+  box-sizing: border-box;   
+}
+
+.custom-modal-box {
+  background: white;
+  padding: 0px 30px;
+  border-radius: 8px;
+  text-align: center;
+  padding-top: 0;
+  margin-top: 0;
+  max-height: 70vh;     
+  overflow-y: auto;      
+  padding-right: 10px;   
+  box-sizing: border-box;  
+  scrollbar-gutter: stable;   
+  padding-inline-end: 12px;
+}
+
+.custom-modal-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-modal-box::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255, 0);
+  border-radius: 8px;
+}
+
+.custom-modal-box::-webkit-scrollbar-thumb {
+  background: #aaa;
+  border-radius: 8px;
+}
+
+.custom-modal-box::-webkit-scrollbar-thumb:hover {
+  background: #888;
+  border-radius: 50%;
+}
+
+
+.custom-modal-box label {
+  font-size: 14px;
+  color: #333;
+  margin-top: 12px;
+  display: block;
+  font-weight: 600;
+  text-align: start;
+  margin-bottom: 6px;
+}
+
+
+#confirmMessage {
+  margin-bottom: 20px;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+#confirmModal .custom-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.btn-yes {
+  padding: 8px 20px;
+  background-color: rgba(118, 191, 84, 0.55);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn-yes:hover {
+  background-color: #76BF54;
+}
+
+.btn-no {
+  padding: 8px 20px;
+  background-color: rgba(242, 126, 169, 0.55);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn-no:hover {
+  background-color: #F27EA9;
+}
+
+
+/* Modal Edit Profil */
+#editModal .custom-modal-box {
+  background: white;
+  padding: 30px 30px;
+  border-radius: 12px;
+    padding-top: 0;
+  margin-top: 0;
+  text-align: center;
+  width: 100%;
+  max-width: 700px;
+}
+
+#editModal h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+#editModal input[type="text"],
+#editModal input[type="date"],
+#editModal input[type="file"],
+#editModal input[type="password"],
+#editModal select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  color: #333;
+}
+
+#editModal input[type="file"] {
+  padding: 8px;
+}
+
+/* Tombol Simpan dan Batal */
+#editModal .custom-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+#editModal .btn-yes, 
+#editModal .btn-no {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+#previewFoto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px auto;
+  display: block;
+}
+
+.input-group-password {
+  position: relative;
+  display: flex;
+}
+
+#editPasswordKelas {
+  border: none;
+  width: 100%; /* gunakan 100%, karena toggle-password tidak butuh ruang dari flex */
+  padding-right: 40px; /* beri ruang untuk ikon mata */
+}
+
+
+#editPasswordKelas:focus {
+  border: none;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 999;
+  user-select: none;
+}
+
+.toggle-password img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  margin-right: 2px;
+  margin-top: -20px;
+  margin-bottom: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.toggle-password img:hover {
+  opacity: 1;
+}
+
+.btn-primary {
+  background-color: rgba(170, 140, 220, 0.5);
+  border: none;
+  color: white;
+  padding: 12px;
+  border-radius: 20px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #AA8CDC;
+}
+
+#toast-container {
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+}
+
+#file-upload-button {
+  background-color: #04D9D9;
+}
+/* 
+#editFoto::-webkit-file-upload-button { 
+  background-color: #AA8CDC;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#editFoto::-webkit-file-upload-button:hover {
+  background-color: #9471c1;
+} */

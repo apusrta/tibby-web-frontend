@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+  <head> 
+    <title>Verifikasi Kelas</title>
+    <link rel="stylesheet" href="../css/siswa/inputPin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="body">
+    <div class="containerHero">
+      <div class="logo">
+        <div class="logoWrapper">
+          <img class="logoPicture" src="../assets/eye (2).png" alt="Logo">
+        </div>
+        <p class="textLogo">Tibby</p>
+      </div>
+
+      <div class="logoutButton" id="logoutButton">
+        <img src="../assets/logout.png" alt="Logout" class="logoutIcon">
+      </div>
+    </div>
+
+      <div id="confirmModal" class="custom-modal">
+        <div class="custom-modal-box">
+          <p id="confirmMessage">Apakah kamu yakin ingin kembali ke halaman utama? Perubahan tidak akan disimpan.</p>
+          <div class="custom-modal-buttons">
+            <button id="confirmYes" class="btn-yes">Ya</button>
+            <button id="confirmNo" class="btn-no">Batal</button>
+          </div>
+        </div>
+      </div>
+
+    <div class="containerPassword">
+
+      <p class="openTextOtp">Login Sebagai Siswa</p>
+      <!-- Input username siswa -->
+      <div class="usernameWrapper">
+        <input type="text" id="usernameSiswa" class="inputUsername" placeholder="Ketik username kelas" />
+      </div> 
+
+      <!-- Input kode kelas (OTP) -->
+      <p class="passwordTitle">Masukkan Kode Kelas:</p>
+      <div class="passwordWrapper">
+        <div class="wrapperOtp" id="wrapperOtp">
+          <input type="text" maxlength="1" class="inputOtp" placeholder="_" />
+          <input type="text" maxlength="1" class="inputOtp" placeholder="_"/>
+          <input type="text" maxlength="1" class="inputOtp" placeholder="_"/>
+          <input type="text" maxlength="1" class="inputOtp" placeholder="_"/>
+          <input type="text" maxlength="1" class="inputOtp" placeholder="_"/>
+          <input type="text" maxlength="1" class="inputOtp" placeholder="_"/>
+        </div>
+      </div>
+      <p id="pesanOtp">Kode salah. Coba lagi!</p>
+      <button id="verifyCode">Verifikasi</button>
+    </div>
+    <div id="toast-container"></div>
+    <script src="../js/siswa/inputPin.js"></script>
+
+  </body>
+</html>

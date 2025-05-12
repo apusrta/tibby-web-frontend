@@ -1,0 +1,687 @@
+body {
+  font-family: 'Outfit', sans-serif;
+  margin: 0;
+  padding-top: 95px;
+  padding-right: 100px;
+  padding-left: 25px;
+  background-color: rgba(162, 139, 217, 0.150);
+}
+
+/* -------------------------
+   Topbar / Header
+------------------------- */
+.containerHero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 1000;
+  border-bottom: 1px solid #454545;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  column-gap: 15px;
+}
+
+.logoWrapper {
+  width: 45px;
+  height: 45px;
+  border-radius: 30px;
+  /* background-color: #DDFCFC; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
+}
+
+.logoPicture {
+  width: auto;
+  height: 30px;
+}
+
+.textLogo {
+  font-weight: 700;
+  font-size: 23px;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  margin-left: -13px;
+}
+
+.sidebarWrapperBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  margin-left: auto;
+  margin-right: 13px;
+}
+
+.sidebarMainBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+
+.sidebarMainBtn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidebarMainBtn img {
+  width: auto;
+  height: 30px;
+  transition: opacity 0.15s ease;
+  opacity: 1;
+}
+
+.sidebarMainBtn img.fade-out {
+  opacity: 0;
+}
+
+/* -------------------------
+   Sidebar Kanan
+------------------------- */
+
+.sidebar {
+  display: flex;
+  position: fixed;
+  right: 15px;
+  top: 60px;
+  height: 84%;
+  background-color: white;
+  border-left: 1px solid #454545;
+  padding: 30px 30px 25px 15px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  padding-right: 15px;
+  margin-right: -15px;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px; 
+  
+  opacity: 1;
+  transform: translateX(100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar.show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+
+
+/* -------------------------
+   Icon Mini (dalam Sidebar)
+------------------------- */
+.iconMini {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  background-color: rgb(245, 245, 245);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.iconMini:hover {
+  transform: scale(1.1);
+}
+
+.iconMini img {
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.iconMini img.active {
+  opacity: 1;
+}
+
+/* Tooltip di samping ikon */
+.tooltip {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #454545;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.iconMini:hover .tooltip {
+  opacity: 1;
+}
+
+#berandaColor {
+  background-color: rgb(242, 80, 139, 0.5);
+}
+
+#peringkatColor {
+  background-color: #A38BD9;
+}
+
+#kelasColor {
+  background-color: rgb(4, 217, 217, 0.5);
+}
+
+#profileColor {
+  background-color: rgb(118, 191, 84, 0.5);
+}
+
+/* -------------------------
+   Container Utama
+------------------------- */
+.container {
+  max-width: 1020px;
+  margin: 0 auto;
+  background: white;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #454545;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+/* -------------------------
+   Judul & Search Bar
+------------------------- */
+.peringkat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#judulPeringkat {
+  font-size: 50px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.subjudul-kelas::after {
+  content: "";
+  display: block;
+  width: 130px;
+  height: 4px;
+  background-color: #A38BD9; 
+  margin: 10px auto 0 auto;
+  border-radius: 10px;
+}
+
+.subjudul-kelas {
+  display: block;
+  text-align: center;
+  font-size: 22px;
+  color: #555;
+  font-weight: 500;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+/* -------------------------
+   Tabel Peringkat
+------------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 45px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+}
+
+th {
+  background-color: #A38BD9;
+  color: white;
+}
+
+td img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+td.nama-siswa {
+  position: relative;
+}
+
+td.nama-siswa:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: 120%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 1;
+}
+
+/* -------------------------
+   Tombol "Lihat Catatan"
+------------------------- */
+.lihatCatatanBtn {
+  background-color: #F27EA9;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lihatCatatanBtn:hover {
+  background-color: #F2508B;
+}
+
+/* -------------------------
+   Diagram Batang
+------------------------- */
+.chart-container {
+  margin-top: 30px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Modal */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 9999; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1.8px);    
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 550px;
+  position: relative;
+}
+
+.closeBtn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  color: #454545;
+}
+
+/* Item pelanggaran */
+.pelanggaran-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+  padding: 8px;
+  border-bottom: 1px solid gray;
+  color: #555;
+  font-size: 20px;
+}
+
+/* button lihat detail  */
+
+.lihatDetailBtn {
+  background-color: rgba(162, 139, 217, 0.336);
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  margin-left: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.lihatDetailBtn:hover {
+  background-color: rgb(162, 139, 217);
+}
+
+.foto-cell {
+  width: 150px;
+  height: 35px;
+ 
+}
+
+.no-cell {
+  width: 50px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.aksi-cell {
+  width: 120px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.total-cell {
+  width: 120px;
+}
+
+.nama-cell {
+  width: auto;
+}
+
+td img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Modal latar belakang */
+.custom-modal {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1.8px);     
+}
+
+/* Kotak dialog modal */
+.custom-modal-box {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative; 
+
+}
+
+#messageModalTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Teks konfirmasi */
+#confirmMessage {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+/* Tombol Ya/Batal */
+.custom-modal-buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Tombol Ya */
+.btn-yes {
+  padding: 8px 20px;
+  background-color: rgba(118, 191, 84, 0.55);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn-yes:hover {
+  background-color: #76BF54;
+}
+
+/* Tombol Batal */
+.btn-no {
+  padding: 8px 20px;
+  background-color: rgba(242, 126, 169, 0.55);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn-no:hover {
+  background-color: #F27EA9;
+}
+
+/* foto */
+.fotoSiswa {
+  background-color: rgb(163, 139, 217, 0.336);
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: none;
+  padding: 5px;
+  transition: all 0.3s;
+}
+
+.fotoSiswa:hover {
+  transform: scale(1.1);
+}
+
+/* tidak ada riwayat pelanggara */
+.judul-riwayat {
+  position: relative;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  padding-bottom: 14px;
+  margin-bottom: 30px;
+}
+
+.judul-riwayat::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background-color: #A38BD9;
+  border-radius: 2px;
+}
+
+.tdk-ada-riwayat {
+  text-align: center;
+  padding-top: 10px;
+  color: #555;
+}
+
+.detailBtn {
+  background-color: rgba(162, 139, 217, 0.336);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  padding: 0;
+  transition: all 0.3s;
+}
+
+.detailBtn:hover {
+  background-color:  rgb(162, 139, 217);
+  transform: scale(1.1);
+}
+
+.detailBtn img {
+  width: 22px;
+  height: 22px;
+  border-radius: 0;
+}
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  background-color: #0000009c;
+  color: #fff;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 10;
+  bottom: 125%; 
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.tooltip-wrapper:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.messageBtn {
+  background-color: rgb(4, 217, 217, 0.336); 
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-left: 5px;
+  transition: all 0.3s;
+}
+
+.messageBtn:hover {
+  background-color: rgb(4, 217, 217);
+  transform: scale(1.1);
+}
+
+.messageBtn img {
+  width: 22px;
+  height: 22px;
+  border-radius: 0;
+}
+
+.hapusPelanggaranBtn {
+  background-color: rgba(242, 80, 139, 0.5);
+  border: none;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.hapusPelanggaranBtn:hover {
+  background-color: #F2508B;
+  transform: scale(1.1);
+}
+
+.hapusPelanggaranBtn img {
+  width: 18px;
+  height: 18px;
+}
+
+#toast-container {
+  position: fixed;
+  top: 5%; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99999;
+}
+
+/* Tombol X */
+.close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: rgb(69, 69, 69, 0.5);
+  z-index: 99999;
+  font-weight: 700;
+}
+
+.close-modal-btn:hover {
+  color: #454545;
+}
+

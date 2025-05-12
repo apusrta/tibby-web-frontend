@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Profil Guru</title>
+  <link rel="stylesheet" href="../css/guru/profile.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="containerHero">
+    <div class="logo">
+      <div class="logoWrapper">
+        <img class="logoPicture" src="../assets/eye (2).png" alt="Logo">
+      </div>
+      <p class="textLogo">Tibby</p>
+    </div>
+  </div>
+
+  <!-- Sidebar kecil -->
+  <div class="sidebar show" id="sidebar">
+    <div class="iconMini" id="berandaColor">
+      <img class="berandaIconClick" src="../assets/home (2).png" alt="">
+      <span class="tooltip">Beranda</span>
+    </div>
+  
+    <div class="iconMini" id="peringkatColor">
+      <img class="peringkatIcon" src="../assets/apps-sort (2).png" alt="">
+      <span class="tooltip">Papan Peringkat</span>
+    </div>
+  
+    <div class="iconMini" id="kelasColor">
+      <img class="classIcon" src="../assets/chalkboard-user (2).png" alt="">
+      <span class="tooltip">Kelas</span>
+    </div>
+  
+    <div class="iconMini" id="profileColor">
+      <img class="profileIcon" src="../assets/user (3).png" alt="">
+      <span class="tooltip">Profil</span>
+    </div>
+  </div>
+
+  <div class="profile-container">
+    <h1 class="judulProfile">Profile Guru</h1>
+    <div class="profile-pic-wrapper">
+      <img src="" alt="Foto Profil" id="fotoProfil" class="profile-pic" />
+    </div>
+    <div class="profile-header">
+      <div class="profile-info">
+        <div class="info-row">
+          <span class="label">Nama</span>
+          <span class="colon">:</span>
+          <span id="namaGuru">Nama Guru</span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Gender</span>
+          <span class="colon">:</span>
+          <span id="genderGuru"></span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Tanggal Lahir</span>
+          <span class="colon">:</span>
+          <span id="tglLahirGuru"></span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Username Akun</span>
+          <span class="colon">:</span>
+          <span id="namaAkunGuru"></span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Username Kelas</span>
+          <span class="colon">:</span>
+          <span id="namaKelasGuru"></span>
+        </div>
+      </div>
+  </div>
+
+  <div class="buttons2">
+    <button id="editProfileBtn">Edit Profil</button>
+    <button id="logoutBtn" class="logout">Logout</button>
+  </div>
+
+  <!-- Modal Konfirmasi Logout -->
+  <div id="confirmModal" class="custom-modal">
+    <div class="custom-modal-box">
+      <p id="confirmMessage">Apakah kamu yakin ingin logout?</p>
+      <div class="custom-modal-buttons">
+        <button id="confirmYes" class="btn-yes">Ya</button>
+        <button id="confirmNo" class="btn-no">Batal</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Edit Profil -->
+<form id="editProfileForm">
+  <div id="editModal" class="custom-modal">
+    <div class="custom-modal-box1">
+      <h3>Edit Profil</h3>
+      <div class="custom-modal-box">
+        <label for="editNama">Nama Lengkap</label>
+        <input type="text" id="editNama" placeholder="Masukkan nama">
+
+        <label for="editGender">Jenis Kelamin</label>
+        <select id="editGender">
+          <option value="Laki-laki">Laki-laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
+
+        <label for="editTanggal">Tanggal Lahir</label>
+        <input type="date" id="editTanggal">
+
+        <label>Username Akun</label>
+        <input type="text" id="editUsername" placeholder="Masukkan username akun">
+
+        <label>Username Kelas</label>
+        <input type="text" id="editUsernameKelas" placeholder="Masukkan username kelas">
+  
+        <label for="editFoto">Foto Profil</label>
+        <input type="file" id="editFoto">
+
+        <img id="previewFoto" style="display: none;" />
+      </div>
+      <div class="custom-modal-buttons">
+        <button type="button" class="btn-yes" id="simpanEditBtn">Simpan</button>
+        <button type="button" class="btn-no" id="batalEditBtn">Batal</button>
+      </div>
+    </div>
+  </div>
+</form>
+  <script src="../js/guru/profile.js"></script>
+
+</body>
+</html>

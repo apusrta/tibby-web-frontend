@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Beranda</title>
+  <link rel="stylesheet" href="../css/siswa/beranda.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="containerHero">
+    <div class="logo">
+      <div class="logoWrapper">
+        <img class="logoPicture" src="../assets/eye (2).png" alt="Logo">
+      </div>
+      <p class="textLogo">Tibby</p>
+    </div>
+ 
+    <!-- Tombol Logout -->
+    <div class="logoutButton" id="logoutButton">
+      <img src="../assets/logout.png" alt="Logout" class="logoutIcon">
+    </div>
+  </div>
+
+  <!-- main-cntainer -->
+  <div id="toast-container"></div>
+ 
+  <div class="container">
+    <div class="kelas-header">
+      <h2 id="judulPeringkat">Peringkat Pelanggaran</h2>
+      <span id="namaKelas" class="subjudul-kelas"></span>
+    </div>
+
+    <!-- Tabel Peringkat -->
+    <table id="tabelPeringkat"> 
+      <thead>
+        <tr>
+          <th class="no-cell">No</th>
+          <th class="foto-cell">Foto Profil</th>
+          <th class="nisn-cell">NISN</th>
+          <th class="nama-cell">Nama Siswa</th>
+          <th class="total-cell">Total Poin</th>
+          <th class="aksi-cell">Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="tbodyPeringkat">
+        <!-- Data siswa dari JS -->
+      </tbody> 
+    </table>
+  </div>
+
+  <!-- Modal Detail Pelanggaran -->
+  <div id="modalDetail" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="closeBtn">&times;</span>
+      <h2 class="judul-riwayat">Riwayat Pelanggaran</h2>
+      <div id="listPelanggaran">
+        <!-- Pelanggaran siswa akan muncul di sini -->
+      </div> 
+    </div>
+  </div>
+
+  <div id="confirmModal" class="custom-modal">
+    <div class="custom-modal-box">
+      <p id="confirmMessage">Apakah kamu yakin ingin kembali ke halaman utama? Perubahan tidak akan disimpan.</p>
+      <div class="custom-modal-buttons">
+        <button id="confirmYes" class="btn-yes">Ya</button>
+        <button id="confirmNo" class="btn-no">Batal</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="../js/siswa/beranda.js"></script>
+
+</body>
+</html>

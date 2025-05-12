@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kelas</title>
+  <link rel="stylesheet" href="../css/guru/kelas.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>  
+  <div class="containerHero">
+    <div class="logo">
+      <div class="logoWrapper">
+        <img class="logoPicture" src="../assets/eye (2).png" alt="Logo">
+      </div>
+      <p class="textLogo">Tibby</p>
+    </div>
+  </div>
+
+  <!-- Sidebar kecil -->
+  <div id="sidebar" class="sidebar show">
+    <div class="iconMini" id="berandaColor">
+      <img class="berandaIconClick" src="../assets/home (2).png" alt="">
+      <span class="tooltip">Beranda</span>
+    </div>
+  
+    <div class="iconMini" id="peringkatColor">
+      <img class="peringkatIcon" src="../assets/apps-sort (2).png" alt="">
+      <span class="tooltip">Papan Peringkat</span>
+    </div>
+  
+    <div class="iconMini" id="kelasColor">
+      <img class="classIcon" src="../assets/chalkboard-user (3).png" alt="">
+      <span class="tooltip">Kelas</span>
+    </div>
+  
+    <div class="iconMini" id="profileColor">
+      <img class="profileIcon" src="../assets/user (2).png" alt="">
+      <span class="tooltip">Profil</span>
+    </div>
+  </div>
+
+  <!-- main-cntainer -->
+    <div class="container">
+      <!-- Judul Kelas -->
+      <div class="kelas-header">
+        <div class="tooltip-wrapper" style="position: relative; display: inline-block;">
+          <h2 contenteditable="true" id="judulKelas">Kelas</h2>
+          <span class="tooltip-text">Klik untuk mengedit nama kelas.</span>
+        </div>        
+        <div class="kontrol-siswa">
+          <button id="tambahSiswa"><span>+ </span>Tambah Siswa</button>
+        </div>
+      </div>
+
+      <input id="inputCari" type="text" placeholder="Ketik nama atau NISN siswa">
+    
+      <!-- Tabel Peringkat -->
+      <table id="tabelKelas">  
+        <thead>
+          <tr>
+            <th class="no-cell">No</th>
+            <th class="foto-cell">Foto Profil</th> 
+            <th class="nisn-cell">NISN</th>
+            <th class="nama-cell">Nama Siswa</th>
+            <th class="aksi-cell">Aksi</th>
+          </tr>
+
+        </thead>
+        <tbody id="tbody">
+          <!-- Baris siswa ditambahkan melalui JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- modal confirm hapus siswa -->
+
+    <div id="confirmModal" class="custom-modal">
+      <div class="custom-modal-box">
+        <p id="confirmMessage">Apakah Anda yakin?</p>
+        <div class="custom-modal-buttons">
+          <button id="confirmYes" class="btn-yes">Ya</button>
+          <button id="confirmNo" class="btn-no">Batal</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal Tambah Poin -->
+    <div id="modalPoin" class="modal hidden">
+      <div class="modal-content">
+        <h3 class="tambahPoinTitle">Tambah Poin Pelanggaran</h3>
+        <ul id="daftarPelanggaran">
+          <!-- Isi lewat JS -->
+        </ul>
+        <div id="formLainnya" class="hidden">
+          <input type="text" id="inputLainnya" placeholder="Nama pelanggaran" />
+          <input type="number" id="inputPoinLainnya" placeholder="Jumlah poin" />
+          <button id="konfirmasiLainnya">+ Tambah</button>
+        </div>
+        <button id="tutupModal" class="close-button" aria-label="Tutup modal">&times;</button>
+      </div>
+    </div>
+    
+  <div id="toast-container"></div>
+
+  <!-- Modal konfirmasi -->
+  <div id="kontakSiswaModal" class="kontak-siswa-modal-wrapper">
+    <div class="kontak-siswa-modal-content">
+      <span class="kontak-siswa-modal-close">&times;</span>
+      <h2 class="titleSiswa"> Data Siswa</h2>
+      <ul id="daftarKontakSiswa">
+        <form id="formKontakSiswa">
+          <div class="kontak-siswa-form-group">
+            <label>Nama siswa:</label>
+            <input type="text" name="namaSiswa" />
+          </div>
+          <div class="kontak-siswa-form-group">
+            <label>NISN:</label>
+            <input type="text" name="nisnSiswa" />
+          </div>
+          <div class="kontak-siswa-form-group">
+            <label>Telepon siswa:</label>
+            <input type="text" name="telpSiswa" />
+          </div>
+          <div class="kontak-siswa-form-group">
+            <label>Email siswa:</label>
+            <input type="email" name="emailSiswa" />
+          </div>
+          <div class="kontak-siswa-form-group">
+            <label>Alamat siswa:</label>
+            <input type="text" name="alamatSiswa" /> 
+          </div>
+
+          <div class="kontak-siswa-form-group">
+            <label>Nama ayah:</label>
+            <input type="text" name="namaAyah" />
+          </div>
+          <div class="kontak-siswa-form-group">
+            <label>Telepon ayah: </label>
+            <input type="text" name="telpAyah" />
+          </div>
+          <div class="kontak-siswa-form-group">
+            <label>Email ayah:</label>
+            <input type="email" name="emailAyah" />
+          </div>
+
+          <div class="kontak-siswa-form-group">
+            <label>Nama ibu:</label>
+            <input type="text" name="namaIbu" />
+          </div>
+          <div class="kontak-siswa-form-group">
+            <label>Telepon ibu:</label>
+            <input type="text" name="telpIbu" />
+          </div>
+          <div class="kontak-siswa-form-group">
+            <label>Email ibu:</label>
+            <input type="email" name="emailIbu" />
+          </div>
+
+          <div class="kontak-siswa-form-group">
+            <label>Nama wali:</label>
+            <input type="text" name="namaWali" />
+          </div>
+          <div class="kontak-siswa-form-group">
+            <label>Telepon wali:</label>
+            <input type="text" name="telpWali" />
+          </div>
+          <div class="kontak-siswa-form-group">
+            <label>Email wali:</label>
+            <input type="email" name="emailWali" />
+          </div>
+        </ul>
+        <button type="submit" class="kontak-siswa-save-btn">Simpan</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  
+
+  <script src="../js/guru/kelas.js"></script>
+
+</body>
+</html>

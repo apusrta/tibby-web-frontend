@@ -1,0 +1,253 @@
+.body {
+  padding-top: 70px; /* sama juga, biar isi turun */
+  font-family: 'Outfit';
+}
+
+/* -------------------------
+   Topbar / Header
+------------------------- */
+.containerHero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  z-index: 1000;
+  border-bottom: 1px solid #454545;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  column-gap: 15px;
+}
+
+.logoWrapper {
+  width: 45px;
+  height: 45px;
+  border-radius: 30px;
+  /* background-color: #DDFCFC; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
+}
+
+.logoPicture {
+  width: auto;
+  height: 30px;
+}
+
+.textLogo {
+  font-weight: 700;
+  font-size: 23px;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  margin-left: -13px;
+}
+
+#daftarLink {
+  color: #5a9bd8; 
+  text-decoration: underline;
+  cursor: pointer;
+}
+#daftarLink:hover {
+  color: #1e3a8a; 
+}
+
+
+/* MAIN CONTAINER */
+.containerMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 50px;
+}
+
+/* WELCOME */
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 5px;
+}
+
+.welcomeText {
+  font-size: 60px;
+  font-weight: 800;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 30px;
+  color: #333;
+  border-bottom: 1px solid black;
+}
+
+.shortText {
+  margin-top: 20px;
+}
+
+.shortText, .shortText2 {
+  font-size: 24px;
+  text-align: center;
+  color: #555;
+}
+
+/* LOGIN */
+.login {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.loginTS {
+  display: flex;
+  column-gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginAs {
+  color: #333;
+  font-weight: 700;
+  font-size: 25px;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.login {
+  display: flex;
+  column-gap: 30px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* TEACHER VER */
+.loginTeacher {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: fit-content;
+  height: fit-content;
+  border: 2.5px solid #6DB850;
+  border-radius: 35px;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  padding-right: 80px;
+  padding-left: 80px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.loginTeacher:hover {
+  cursor: pointer;
+  background-color: #ecffe4;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(109, 184, 80, 0.3); 
+}
+
+.loginWrapperT {
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  background-color: #89D770;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.loginImgT {
+  width: 70%;
+  height: auto;
+  padding-right: 2.5px;
+  padding-bottom: 2px;
+}
+
+.textLogin {
+  font-weight: 700;
+  font-size: 35px;
+  color: #333;
+}
+
+.iconWrapper {
+  width: 50px;
+  height: fit-content;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.iconImg {
+  width: 100%;
+  height: auto;
+}
+
+/* STUDENT VER */
+.loginStudent {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: fit-content;
+  height: fit-content;
+  border: 2.5px solid #AA8CDC;
+  border-radius: 35px;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  padding-right: 80px;
+  padding-left: 80px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+} 
+
+.loginStudent:hover {
+  cursor: pointer;
+  background-color: #f5efff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(170, 140, 220, 0.3);
+}
+
+.loginWrapperS {
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  background-color: #C1A8E0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.loginImgS {
+  width: 70%;
+  height: auto;
+  padding-right: 2.5px;
+  padding-bottom: 2px;
+}
+
+.daftarAkun {
+  color: #555; 
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+}

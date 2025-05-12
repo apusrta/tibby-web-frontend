@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar Akun</title>
+  <link rel="stylesheet" href="css/daftarAkun.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="containerHero">
+    <div class="logo">
+      <div class="logoWrapper">
+        <img class="logoPicture" src="assets/eye (2).png" alt="Logo">
+      </div>
+      <p class="textLogo">Tibby</p>
+    </div>
+
+    <div class="logoutButton" id="logoutButton">
+      <img src="assets/logout.png" alt="Logout" class="logoutIcon">
+    </div>
+  </div>
+  
+  <div class="container"> 
+    <div class="left-panel">
+      <h2>Halo!</h2>
+      <p>Sudah memiliki akun?</p>
+      <a href="masukAkun.html"><button class="btn-outline">Login</button></a>
+    </div>
+    <div class="right-panel">
+      <h2>Buat Akun Baru</h2>
+      <div class="form-container">
+        <form id="registerForm">
+          <div class="input-group">
+            <input type="text" id="namaLengkap" placeholder="Nama Lengkap" required />
+          </div>
+
+          <div class="input-group">
+            <select id="gender" required>
+              <option value="">Pilih Jenis Kelamin</option>
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <input type="date" id="tanggalLahir" required />
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="username" placeholder="Username Akun" required />
+          </div>
+
+          <div class="input-group">
+            <div class="input-wrapper">
+              <input type="password" id="password" placeholder="Password Akun" required
+                    title="Password akun hanya bisa dibuat sekali, harap diingat baik-baik." />
+              <span class="toggle-password" onclick="togglePassword('password', this)">
+                <img src="assets/hidden.png" alt="">
+              </span>
+            </div>
+            <div class="field-warning" id="warn-password">
+              ⚠️ Password akun hanya bisa dibuat sekali dan tidak dapat diubah, harap diingat baik-baik!
+            </div>
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="usernameKelas" placeholder="Username Kelas" required />
+          </div>
+
+          <div class="input-group">
+            <div class="input-wrapper">
+              <input type="password" id="passwordKelas" placeholder="Kode Kelas" required 
+                    title="Password kelas hanya bisa dibuat sekali, harap diingat baik-baik." />
+              <span class="toggle-password" onclick="togglePassword('passwordKelas', this)">
+                <img src="assets/hidden.png" alt="">
+              </span>
+            </div>
+            <div class="field-warning" id="warn-passwordKelas">
+              ⚠️ Kode kelas harus berjumlah 6 angka. Kode kelas hanya bisa dibuat sekali dan tidak dapat diubah, harap diingat baik-baik!
+            </div>
+          </div>
+ 
+        </form>
+      </div>
+      <button type="submit" class="btn-primary">Daftar</button>
+      
+    </div>
+  </div>
+  <div id="toast-container"></div>
+    <div id="confirmModal" class="custom-modal">
+    <div class="custom-modal-box">
+      <p id="confirmMessage">Apakah kamu yakin ingin kembali ke halaman utama? Perubahan tidak akan disimpan.</p>
+      <div class="custom-modal-buttons">
+        <button id="confirmYes" class="btn-yes">Ya</button>
+        <button id="confirmNo" class="btn-no">Batal</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/daftarAkun.js"></script>
+</body>
+</html>

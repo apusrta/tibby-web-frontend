@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Akun</title>
+  <link rel="stylesheet" href="css/masukAkun.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="containerHero">
+    <div class="logo">
+      <div class="logoWrapper">
+        <img class="logoPicture" src="assets/eye (2).png" alt="Logo">
+      </div>
+      <p class="textLogo">Tibby</p>
+    </div>
+
+    <div class="logoutButton" id="logoutButton">
+      <img src="assets/logout.png" alt="Logout" class="logoutIcon">
+    </div>
+  </div>
+  
+  <div class="container"> 
+    <!-- panel input di kiri -->
+    <div class="left-panel">
+      <h2>Login Sebagai Guru</h2>
+      <form id="loginForm">
+        <div class="input-group">
+          <input type="text" id="username" placeholder="Username" required />
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Password" required />
+          <span class="toggle-password" onclick="togglePassword('password', this)">
+            <img src="assets/hidden.png" alt="">
+          </span>
+        </div>
+        <button type="submit" class="btn-primary">Masuk</button>
+      </form>
+    </div>
+
+    <!-- Panel daftar di kanan -->
+    <div class="right-panel">
+      <h2>Selamat Datang Kembali!</h2>
+      <p>Belum punya akun?</p>
+      <a href="daftarAkun.html"><button class="btn-outline">Daftar</button></a>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <div id="toast-container"></div>
+    <div id="confirmModal" class="custom-modal">
+    <div class="custom-modal-box">
+      <p id="confirmMessage">Apakah kamu yakin ingin kembali ke halaman utama? Perubahan tidak akan disimpan.</p>
+      <div class="custom-modal-buttons">
+        <button id="confirmYes" class="btn-yes">Ya</button>
+        <button id="confirmNo" class="btn-no">Batal</button>
+      </div>
+    </div> 
+  </div>
+  
+  <script src="js/masukAkun.js"></script>
+</body>
+</html>
