@@ -34,7 +34,7 @@ const username = loggedInUser?.username;
 if (!username) {
   console.error("Username tidak ditemukan di sessionStorage.");
 } else {
-  fetch(`http://tibby-web-backend.vercel.app/api/users/guru?username=${username}`)
+  fetch(`https://tibby-web-backend.vercel.app/api/users/guru?username=${username}`)
     .then((res) => res.json())
     .then((dataGuru) => {
       const sapaan = dataGuru.gender === "Laki-laki" ? "Pak" : "Bu";

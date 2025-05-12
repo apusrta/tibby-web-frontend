@@ -45,7 +45,7 @@ if (!userRaw || !token || !kelasAktif) {
 
 async function loadPeringkat() {
   try {
-    const response = await fetch(`http://tibby-web-backend.vercel.app/api/siswa/kelas/${kelasAktif}`, {
+    const response = await fetch(`https://tibby-web-backend.vercel.app/api/siswa/kelas/${kelasAktif}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -132,7 +132,7 @@ async function loadPeringkat() {
         mainOptions.style.display = 'none';
         document.getElementById('formPesan').style.display = 'flex';
 
-        const res = await fetch(`http://tibby-web-backend.vercel.app/api/siswa/detail/${idSiswa}`);
+        const res = await fetch(`https://tibby-web-backend.vercel.app/api/siswa/detail/${idSiswa}`);
         const siswa = await res.json();
 
         document.getElementById('emailTujuan').value = siswa.emailAyah || '';
@@ -143,7 +143,7 @@ async function loadPeringkat() {
         mainOptions.style.display = 'none';
         document.getElementById('formPesan').style.display = 'flex';
 
-        const res = await fetch(`http://tibby-web-backend.vercel.app/api/siswa/detail/${idSiswa}`);
+        const res = await fetch(`https://tibby-web-backend.vercel.app/api/siswa/detail/${idSiswa}`);
         const siswa = await res.json();
 
         document.getElementById('emailTujuan').value = siswa.emailBK || '';
@@ -162,7 +162,7 @@ async function loadPeringkat() {
         }
     
         try {
-          const res = await fetch('http://tibby-web-backend.vercel.app/api/kirim-email', {
+          const res = await fetch('https://tibby-web-backend.vercel.app/api/kirim-email', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, pesan, idSiswa }),
@@ -232,7 +232,7 @@ function showToast(message) {
 
 async function lihatDetailSiswa(idSiswa) {
   try {
-    const response = await fetch(`http://tibby-web-backend.vercel.app/api/siswa/detail/${idSiswa}`);
+    const response = await fetch(`https://tibby-web-backend.vercel.app/api/siswa/detail/${idSiswa}`);
     const siswa = await response.json();
     console.log(siswa.riwayatPelanggaran);
 
@@ -285,13 +285,13 @@ async function hapusPelanggaran(e) {
 
   try {
 
-    await fetch(`http://tibby-web-backend.vercel.app/api/siswa/${idSiswa}/pelanggaran/${indexPelanggaran}`, {
+    await fetch(`https://tibby-web-backend.vercel.app/api/siswa/${idSiswa}/pelanggaran/${indexPelanggaran}`, {
       method: 'DELETE'
     });
 
     lihatDetailSiswa(idSiswa);
 
-    const response = await fetch(`http://tibby-web-backend.vercel.app/api/siswa/detail/${idSiswa}`);
+    const response = await fetch(`https://tibby-web-backend.vercel.app/api/siswa/detail/${idSiswa}`);
     const siswa = await response.json();
     const tombolDiTabel = document.querySelector(`.tambahPoinBtn[data-id="${idSiswa}"]`);
 
@@ -346,7 +346,7 @@ async function ambilNamaKelas() {
   try {
     const token = sessionStorage.getItem('token');
 
-    const response = await fetch('http://tibby-web-backend.vercel.app/api/kelas/me', {
+    const response = await fetch('https://tibby-web-backend.vercel.app/api/kelas/me', {
       headers: {
         Authorization: `Bearer ${token}`
       }

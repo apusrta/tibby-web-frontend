@@ -34,7 +34,7 @@ iconMinis.forEach((iconDiv, index) => {
 const storedUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
 const username = storedUser?.username;
 
-fetch(`http://tibby-web-backend.vercel.app/api/users/guru?username=${username}`)
+fetch(`https://tibby-web-backend.vercel.app/api/users/guru?username=${username}`)
   .then(res => res.json())
   .then(data => {
     document.getElementById("namaGuru").textContent = data.nama;
@@ -89,7 +89,7 @@ const simpanBtn = document.getElementById("simpanEditBtn");
 const batalBtn = document.getElementById("batalEditBtn");
 
 document.getElementById("editProfileBtn").addEventListener("click", () => {
-  fetch(`http://tibby-web-backend.vercel.app/api/users/guru?username=${username}`)
+  fetch(`https://tibby-web-backend.vercel.app/api/users/guru?username=${username}`)
     .then(res => res.json())
     .then(data => {
       document.getElementById("editNama").value = data.nama || "";
@@ -107,7 +107,7 @@ batalBtn.addEventListener("click", () => {
 });
 
 async function isUsernameAvailable(username, currentUserId) {
-  const res = await fetch(`http://tibby-web-backend.vercel.app/api/users/check-username?username=${username}&excludeId=${currentUserId}`);
+  const res = await fetch(`https://tibby-web-backend.vercel.app/api/users/check-username?username=${username}&excludeId=${currentUserId}`);
   const data = await res.json();
   return data.available;
 }
@@ -169,7 +169,7 @@ async function updateProfil({ nama, gender, tanggalLahir, foto = null, username,
   try {
     console.log('Username untuk update:', storedUser.username);
     console.log('Payload yang dikirim:', { username, nama, gender, tanggalLahir, foto, usernameKelas });
-    const res = await fetch(`http://tibby-web-backend.vercel.app/api/users/guru?username=${storedUser.username}`, {
+    const res = await fetch(`https://tibby-web-backend.vercel.app/api/users/guru?username=${storedUser.username}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, nama, gender, tanggalLahir, foto, usernameKelas }),

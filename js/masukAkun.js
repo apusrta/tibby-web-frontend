@@ -18,7 +18,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
   }
 
   try {
-    const response = await fetch('http://tibby-web-backend.vercel.app/api/users/login', {
+    const response = await fetch('https://tibby-web-backend.vercel.app/api/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

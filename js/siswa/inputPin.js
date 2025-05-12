@@ -69,7 +69,7 @@ verifyButton.addEventListener("click", async () => {
   }
 
   try {
-    const res = await fetch("http://tibby-web-backend.vercel.app/api/users/verifikasi-kelas", {
+    const res = await fetch("https://tibby-web-backend.vercel.app/api/users/verifikasi-kelas", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ usernameKelas, passwordKelas: kodeKelas })
