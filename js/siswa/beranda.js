@@ -30,7 +30,7 @@ if (!userRaw || !token || !kelasAktif) {
 async function loadPeringkat() {
   try {
     console.log("📦 Token dikirim:", token);
-    const response = await fetch(`https://tibby-web-backend.vercel.app/api/siswa/kelas/${kelasAktif}`, {
+    const response = await fetch(`http://localhost:3000/api/siswa/kelas/${kelasAktif}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -133,7 +133,7 @@ function showToast(message) {
 // Fungsi tampilkan detail siswa
 async function lihatDetailSiswa(idSiswa) {
   try {
-    const response = await fetch(`https://tibby-web-backend.vercel.app/api/siswa/detail/${idSiswa}`);
+    const response = await fetch(`http://localhost:3000/api/siswa/detail/${idSiswa}`);
     const siswa = await response.json();
     console.log(siswa.riwayatPelanggaran);
 
@@ -193,7 +193,7 @@ async function ambilNamaKelas() {
   try {
     const token = sessionStorage.getItem('token');
 
-    const response = await fetch('https://tibby-web-backend.vercel.app/api/kelas/nama', {
+    const response = await fetch('http://localhost:3000/api/kelas/nama', {
       headers: {
         Authorization: `Bearer ${token}`
       }

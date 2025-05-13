@@ -73,7 +73,7 @@ async function tambahSiswa() {
   }
 
   try {
-    const response = await fetch('https://tibby-web-backend.vercel.app/api/siswa', {
+    const response = await fetch('http://localhost:3000/api/siswa', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',
@@ -134,7 +134,7 @@ async function tambahSiswa() {
       if (!konfirmasi) return;
     
       try {
-        await fetch(`https://tibby-web-backend.vercel.app/api/siswa/${siswaBaru._id}`, { method: 'DELETE' });
+        await fetch(`http://localhost:3000/api/siswa/${siswaBaru._id}`, { method: 'DELETE' });
         showToast('Siswa berhasil dihapus');
         row.remove(); 
         updateNomorUrut(); 
@@ -244,7 +244,7 @@ async function tambahPoinKeSiswa(namaPelanggaran, poin) {
   const tanggal = new Date().toISOString(); 
 
   try {
-    await fetch(`https://tibby-web-backend.vercel.app/api/siswa/${id}/poin`, {
+    await fetch(`http://localhost:3000/api/siswa/${id}/poin`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ 
@@ -314,7 +314,7 @@ function setupEventDelegation() {
           const siswaId = siswaRow.dataset.id;
 
           try {
-            await fetch(`tibby-web-backend.vercel.app/api/siswa/${siswaId}/foto`, {
+            await fetch(`http://localhost:3000/api/siswa/${siswaId}/foto`, {
               method: 'PATCH',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ foto: base64 })
@@ -350,7 +350,7 @@ function isiDaftarPelanggaran() {
 
 let namaKelasLama = '';
 
-fetch('https://tibby-web-backend.vercel.app/api/kelas/me', {
+fetch('http://localhost:3000/api/kelas/me', {
   headers: {
     'Authorization': `Bearer ${token}`
   }
@@ -372,7 +372,7 @@ judulKelas.addEventListener('blur', () => {
   console.log('Nama lama:', namaKelasLama);
 
   if (namaBaru && namaBaru !== namaKelasLama) {
-    fetch(`https://tibby-web-backend.vercel.app/api/kelas`, {
+    fetch(`http://localhost:3000/api/kelas`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -416,7 +416,7 @@ async function ambilDataSiswa() {
       return;
     }
     const token = sessionStorage.getItem('token');
-    const response = await fetch(`https://tibby-web-backend.vercel.app/api/siswa/kelas/${kelasAktif}`, {
+    const response = await fetch(`http://localhost:3000/api/siswa/kelas/${kelasAktif}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -474,7 +474,7 @@ async function ambilDataSiswa() {
       if (!konfirmasi) return;
     
       try {
-        await fetch(`https://tibby-web-backend.vercel.app/api/siswa/${siswa._id}`, { method: 'DELETE' });
+        await fetch(`http://localhost:3000/api/siswa/${siswa._id}`, { method: 'DELETE' });
     
         showToast('Siswa berhasil dihapus');
         row.remove(); 
@@ -556,7 +556,7 @@ function tampilkanSiswa(daftar) {
       if (!konfirmasi) return;
     
       try {
-        await fetch(`https://tibby-web-backend.vercel.app/api/siswa/${siswa._id}`, { method: 'DELETE' });
+        await fetch(`http://localhost:3000/api/siswa/${siswa._id}`, { method: 'DELETE' });
         location.reload(); 
       } catch (err) {
         console.error('Gagal menghapus siswa:', err);
@@ -639,7 +639,7 @@ contactForm.addEventListener('submit', async function(e) {
   };
 
   try {
-    const response = await fetch(`https://tibby-web-backend.vercel.app/api/siswa/${currentSiswaId}/kontak`, {
+    const response = await fetch(`http://localhost:3000/api/siswa/${currentSiswaId}/kontak`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedData)

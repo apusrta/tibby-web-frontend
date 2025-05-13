@@ -36,7 +36,7 @@ document.querySelector('.btn-primary').addEventListener('click', async function 
   }
 
   try {
-    const response = await fetch('https://tibby-web-backend.vercel.app/api/users/register', {
+    const response = await fetch('http://localhost:3000/api/users/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
